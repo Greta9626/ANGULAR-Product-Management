@@ -1,14 +1,25 @@
-<div class="card mb-3" style="max-width: 540px;">
+<div class="card mb-3 col-8 d-flex flex-wrap align-items-center" style="max-width: 540px;">
     <div class="row g-0">
-      <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h1 class="card-title">{{singleProduct.title}}</h1>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <div class="col-md-4">
+            <img src={{singleProduct.img}} class="img-fluid rounded-start" alt="...">
         </div>
-      </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h1 class="card-title">{{singleProduct.title}}</h1>
+                <p class="card-text">Anno di uscita: {{singleProduct.exitYear}}</p>
+                <p class="card-text">Altezza: {{singleProduct.productHeight}}</p>
+                <p class="card-text">Peso: {{singleProduct.productWeight}}</p>
+                <p class="card-text">Pezzi prodotti: {{singleProduct.itemsProduced}}</p>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quas in non optio
+                    dolor modi harum et dolorem, eius quidem sed natus eveniet dolores deleniti iure eum! Maiores,
+                    temporibus aliquam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit aspernatur
+                    placeat deleniti distinctio.</p>
+                <strong>
+                    <p class="card-text">Prezzo: {{singleProduct.price | currency:'EUR':true}}</p>
+                </strong>
+                <button class="btn btn-danger" (click)="closeDetails.emit(singleProduct)">Chiudi</button>
+                <button class="btn btn-warning" (click)="buyProduct.emit(singleProduct)">Acquista</button>
+            </div>
+        </div>
     </div>
-  </div>
+</div>

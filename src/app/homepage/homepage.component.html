@@ -1,11 +1,15 @@
 <div class="row">
     <div class="col-3">
         <h1>Develhope Shop</h1>
-        <app-products></app-products>
+        <app-products (showDetails)="onShowDetails($event)"></app-products>
     </div>
-    
-    <div class="col-4 d-flex flex-wrap align-items-center">
-        <app-welcome-dev></app-welcome-dev>
+
+    <div class="col-7 d-flex flex-wrap align-items-center">
+        <app-welcome-dev *ngIf="!viewDetails"></app-welcome-dev>
+        <app-product-details *ngIf="viewDetails" [singleProduct]="singleProduct" (closeDetails)="onCloseDetails($event)"
+            (buyProduct)="onBuyProduct($event)"></app-product-details>
     </div>
+    <div class="col-1"><button class="btn btn-warning">Carrello({{countCarrello}})</button></div>
+
 
 </div>

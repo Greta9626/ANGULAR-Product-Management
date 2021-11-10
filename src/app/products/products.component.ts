@@ -1,5 +1,5 @@
 import { IProduct } from './../models/products';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-products',
@@ -44,13 +44,9 @@ export class ProductsComponent implements OnInit {
     },
   ];
 
-  viewDetails: boolean = false;
 
-
-  onShowDetails(product: IProduct): void {
-    this.viewDetails = true;
+  @Output() showDetails = new EventEmitter<IProduct>()
   
-  }
 
   constructor() { }
 

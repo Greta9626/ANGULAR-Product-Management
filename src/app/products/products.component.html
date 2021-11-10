@@ -1,3 +1,4 @@
 <app-single-product *ngFor="let product of products" [singleProduct]="product" 
-(showDetails)="onShowDetails($event)">
+(showDetails)="showDetails.emit($event)">
 </app-single-product>
+
